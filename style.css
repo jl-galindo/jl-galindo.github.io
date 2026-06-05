@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+:root {
+  --text-primary: #1a1a1a;
+  --text-muted: #666;
+  --border-color: #ddd;
+  --bg-primary: #fff;
+  --bg-secondary: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e8e8e8;
+    --text-muted: #999;
+    --border-color: #444;
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #252525;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Crimson Pro', serif;
+  font-weight: 300;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 0.5px solid var(--border-color);
+}
+
+a:hover {
+  border-bottom-color: var(--text-primary);
+}
+
+/* Navigation */
+nav {
+  border-bottom: 0.5px solid var(--border-color);
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+}
+
+.nav-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+}
+
+.nav-links a.active {
+  color: var(--text-primary);
+  border-bottom: 0.5px solid var(--text-primary);
+}
+
+.nav-links a:not(.active) {
+  color: var(--text-muted);
+}
+
+/* Main content */
+main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.content-narrow {
+  max-width: 600px;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  margin-top: 3rem;
+}
+
+h2:first-child {
+  margin-top: 0;
+}
+
+h2 + * {
+  border-top: 0.5px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.essay p {
+  font-size: 1.125rem;
+  line-height: 1.9;
+  margin-bottom: 1.75rem;
+}
+
+.research-image {
+  width: 100%;
+  height: 300px;
+  background-image: url('content/wind farm.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-top: 3rem;
+  border-radius: 2px;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Home page */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.home-text h1 {
+  margin-bottom: 1.5rem;
+}
+
+.role-institution {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.photo {
+  width: 200px;
+  height: 280px;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 2px;
+  flex-shrink: 0;
+  background-image: url('content/headshot.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bio {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+
+.profile-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  color: var(--text-primary);
+}
+
+.profile-links a:hover {
+  opacity: 0.7;
+}
+
+.divider {
+  width: 0.5px;
+  height: 1.2em;
+  background-color: var(--border-color);
+}
+
+/* Book page */
+.book-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.book-cover {
+  width: 280px;
+  height: 400px;
+  background-color: var(--bg-secondary);
+  border: 0.5px solid var(--border-color);
+  border-radius: 2px;
+  background-image: url('content/Book Cover.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.book-info h1 {
+  margin-bottom: 0.5rem;
+}
+
+.book-subtitle {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.book-metadata {
+  margin-bottom: 2rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.metadata-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.metadata-label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.book-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 0.5px solid var(--border-color);
+  background: transparent;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.btn:hover {
+  border-color: var(--text-primary);
+}
+
+.book-description {
+  margin-top: 2rem;
+}
+
+.book-description p {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+/* Publications */
+.pub-section {
+  margin-bottom: 3rem;
+}
+
+.pub-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid var(--border-color);
+}
+
+.publication {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.publication:not(:has(.pub-year)) {
+  grid-template-columns: 1fr;
+}
+
+.pub-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  padding-top: 0.3rem;
+}
+
+.pub-body {
+  flex: 1;
+}
+
+.pub-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.pub-authors {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.pub-venue {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.pub-venue a {
+  color: var(--text-muted);
+  border-bottom: 0.5px solid var(--text-muted);
+}
+
+.pub-venue a:hover {
+  border-bottom-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.pub-badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-left: 1rem;
+  padding: 0.25rem 0.5rem;
+  border: 0.5px solid var(--text-muted);
+}
+
+/* CV page */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cv-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cv-embed-container {
+  margin-bottom: 2rem;
+}
+
+.cv-embed {
+  width: 100%;
+  height: 780px;
+  border: 0.5px solid var(--border-color);
+  border-radius: 2px;
+}
+
+.cv-updated {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.625rem;
+  color: var(--text-muted);
+  text-align: right;
+  font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  main {
+    padding: 0 1rem 3rem;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .book-cover {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .publication {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .pub-year {
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+}

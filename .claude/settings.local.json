@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E '\\\\.\\(html|css\\)$')",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s http://localhost:8000/index.html)",
+      "Bash(curl -s http://localhost:8000/publications.html)",
+      "Bash(curl -s http://localhost:8000/style.css)",
+      "Bash(curl -s -I \"https://doi.org/10.1080/09692290.2025.2599249\")",
+      "Bash(curl -I http://localhost:8000/content/headshot.jpeg)",
+      "Bash(pkill -f \"python3 -m http.server\")"
+    ]
+  }
+}
